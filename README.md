@@ -25,4 +25,4 @@ Typescript was selected because of the interfaces feature, to allow more configu
 
 ## References
  - [Rollup + Typescript](https://hackernoon.com/building-and-publishing-a-module-with-typescript-and-rollup-js-faa778c85396)
- 
+ - [Rollup + Typescript + Mocha](https://github.com/wadetandy/rollup-typescript-mocha-template)

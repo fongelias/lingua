@@ -4,7 +4,9 @@
   "description": "nlp lib",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -21,6 +23,7 @@
   },
   "homepage": "https://github.com/fongelias/lingua#readme",
   "devDependencies": {
+    "mocha": "^5.2.0",
     "rollup": "^0.65.0",
     "rollup-plugin-typescript2": "^0.16.1",
     "typescript": "^3.0.1"
