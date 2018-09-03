@@ -4,17 +4,17 @@ a natural language processing library
 
 ## Design
 ### Pipeline
-#### Input
+#### Receiver
 Recieves input to be used in a processor.
 
 #### Processor
 Connects to a single Input and Output. Has a pre-processor, strategy, and result, which is piped to an output.
 
-#### Output
+#### Sender
 Recieves results to be dispatched.
 
 #### Connector
-Inherits from Input and Output, and allows results from one Processor to be used as an input in another.
+Inherits from Receiver and Sender, and allows results from one Processor to be used as an input in another.
 
 ## Technologies
 ### Rollup + Babel
