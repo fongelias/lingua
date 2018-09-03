@@ -5,7 +5,7 @@ a natural language processing library
 ## Design
 ### Pipeline
 #### Receiver
-Recieves input to be used in a processor.
+Recieves input to be used in a processor. Always sent with type `string`
 
 #### Processor
 Connects to a single Input and Output. Has a pre-processor, strategy, and result, which is piped to an output.

@@ -1,1 +1,3 @@
-export interface IReceiver {}
+export interface IReceiver {
+	receive(): void;
+}

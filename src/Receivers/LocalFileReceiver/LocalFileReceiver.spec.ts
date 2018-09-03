@@ -1,7 +1,8 @@
 import * as assert from 'assert';
-import { LocalFileReceiver } from './LocalFileReceiver';
 import * as EventEmitter from 'events';
 import * as path from 'path';
+
+import { LocalFileReceiver } from './LocalFileReceiver';
 
 const config = {
 	testFileName: path.resolve('./src/Receivers/LocalFileReceiver/testFile.txt'), //Resolves relative to project root
@@ -9,7 +10,7 @@ const config = {
 
 describe('class LocalFileReceiver', () => {
 	describe('#receive', () => {
-		it('should read a local file line-by-line', (done) => {
+		it('should read a local file line-by-line, and emit to receiver.line', (done) => {
 			//Test Variable
 			let linesRead = 0;
 			//Set up Emitter
