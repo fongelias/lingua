@@ -6,7 +6,8 @@
 		"noImplicitAny": true,
 		"outDir": "./dist",
 		"target": "es5",
-		"moduleResolution": "node"
+		"moduleResolution": "node",
+		"lib": ["es2015"]
 	},
 	"include": [
 		"src/**/*"
