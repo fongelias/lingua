@@ -8,7 +8,7 @@ a natural language processing library
 Recieves input to be used in a processor. Always sent with type `string`
 
 #### Processor
-Connects to a single Input and Output. Has a pre-processor, strategy, and result, which is piped to an output.
+Connects to a single Receiver and Sender. Has a pre-processor, strategy, and result, which is piped to an output.
 
 #### Sender
 Recieves results to be dispatched.

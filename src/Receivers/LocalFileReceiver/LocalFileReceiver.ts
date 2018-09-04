@@ -1,6 +1,7 @@
 import { IReceiver } from '../../Receivers';
-import * as EventEmitter from 'events';
+import { eventNames } from '../../Constants';
 
+import * as EventEmitter from 'events';
 import * as readline from 'readline';
 import * as fs from 'fs';
 
@@ -18,11 +19,11 @@ export class LocalFileReceiver implements IReceiver {
 		const lineReader = readline.createInterface({ input });
 
 		lineReader.on('line',  (line) => {
-			this.emitter.emit('receiver.line', line);
+			this.emitter.emit(eventNames.receiverChunk, line);
 		})
 
 		lineReader.on('close', () => {
-			this.emitter.emit('receiver.close');
+			this.emitter.emit(eventNames.receiverClosed);
 			input.destroy();
 		})
 	}
