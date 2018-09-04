@@ -11,8 +11,10 @@
   "scripts": {
     "test": "jest",
     "build": "rollup -c",
+    "clean": "rm -r dist",
     "doc": "typedoc --options .typedoc.json",
-    "doc:clean": "rm -r doc"
+    "doc:clean": "rm -r doc",
+    "coverage": "jest --coverage"
   },
   "jest": {
     "transform": {
