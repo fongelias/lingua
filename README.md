@@ -21,7 +21,13 @@ Inherits from Receiver and Sender, and allows results from one Processor to be u
 Rollup was selected over the traditional webpack for its flatter distributables.
 
 ### Typescript
-Typescript was selected because of the interfaces feature, to allow more configurability.
+Typescript was selected because of the interfaces feature, to allow more complex configurations of pipelines
+
+### Jest + ts-jest
+Jest was selected due to the ease of configuration for testing
+
+### TypeDoc
+Used for generating documentation, selected due to ease of use with typescript (over configuring esdocs)
 
 ## References
  - [Rollup + Typescript](https://hackernoon.com/building-and-publishing-a-module-with-typescript-and-rollup-js-faa778c85396)
