@@ -1,12 +1,16 @@
-import { IProcessor } from '../../Processors';
-import { IPreProcessor } from '../../PreProcessors';
-import { IStrategy } from '../../Strategies';
-import { IResultTemplate } from '../../ResultTemplates';
-import { eventNames } from '../../Constants';
+import { 
+	IProcessor,
+	IPreProcessor,
+	IPreProcessed,
+	IStrategy, 
+	IProcessed,
+	IResultTemplate,
+	eventNames 
+} from '../../';
 
 import * as EventEmitter from 'events';
 
-export class BaseProcessor<IResultTemplate> implements IProcessor {
+export class BaseProcessor implements IProcessor {
 	private preProcessor: IPreProcessor;
 	private strategy: IStrategy;
 	private resultTemplate: IResultTemplate;
@@ -35,8 +39,8 @@ export class BaseProcessor<IResultTemplate> implements IProcessor {
 	}
 
 	private process(chunk: string): IResultTemplate {
-		const preProcessed = this.preProcessor.transform(chunk);
-		const processed = this.strategy.execute(preProcessed);
+		const preProcessed: IPreProcessed = this.preProcessor.transform(chunk);
+		const processed: IProcessed = this.strategy.execute(preProcessed);
 		return this.resultTemplate.fillWith(processed);	
 	}
 }

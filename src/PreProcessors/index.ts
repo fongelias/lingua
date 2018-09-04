@@ -1,2 +1,2 @@
-export { IPreProcessor } from './PreProcessor.interface';
+export { IPreProcessor, IPreProcessed } from './PreProcessor.interface';
 

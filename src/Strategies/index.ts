@@ -1,1 +1,1 @@
-export { IStrategy } from './Strategy.interface';
+export { IStrategy, IProcessed } from './Strategy.interface';
