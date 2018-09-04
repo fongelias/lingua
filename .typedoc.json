@@ -1,5 +1,5 @@
 {
-	"mode": "modules",
+	"mode": "file",
 	"out": "doc",
 	"theme": "default",
 	"ignoreCompilerErrors": "true",
@@ -11,5 +11,11 @@
 	"stripInternal": "true",
 	"suppressExcessPropertyErrors": "true",
 	"suppressImplicitAnyIndexErrors": "true",
-	"module": "commonjs"
+	"module": "commonjs",
+	"excludeExternals": "true",
+	"includeDeclarations": "true",
+	"exclude": [
+		"**/*.spec.ts",
+		"**/**/index.ts"
+	]
 }
