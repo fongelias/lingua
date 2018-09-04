@@ -10,7 +10,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "doc": "typedoc --json .typedoc.json"
   },
   "jest": {
     "transform": {
@@ -43,6 +44,7 @@
     "rollup": "^0.65.0",
     "rollup-plugin-typescript2": "^0.16.1",
     "ts-jest": "^23.1.4",
+    "typedoc": "^0.12.0",
     "typescript": "^3.0.1"
   }
 }
