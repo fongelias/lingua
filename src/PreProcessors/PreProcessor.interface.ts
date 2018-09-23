@@ -4,4 +4,5 @@ export interface IPreProcessor {
 
 export interface IPreProcessed {
 	isPreProcessed(): boolean;
+	data: any;
 }

@@ -1,5 +1,4 @@
 import * as assert from 'assert';
-import * as path from 'path';
 import * as EventEmitter from 'events';
 
 import {
@@ -14,10 +13,6 @@ import {
 import { BaseProcessor } from './BaseProcessor';
 
 //Mock Interfaces
-interface IMockPreProcessed extends IPreProcessed {
-	data: string;
-}
-
 interface IMockProcessed extends IProcessed {
 	data: string;
 }
@@ -39,7 +34,7 @@ describe('class BaseProcessor', () => {
 			}
 		};
 		const mockStrategy: IStrategy = {
-			execute: (preProcessed: IMockPreProcessed): IMockProcessed => {
+			execute: (preProcessed: IPreProcessed): IMockProcessed => {
 				return {
 					isProcessed: () => true,
 					data: preProcessed.data,
