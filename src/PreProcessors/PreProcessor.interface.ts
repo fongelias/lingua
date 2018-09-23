@@ -1,5 +1,5 @@
 export interface IPreProcessor {
-	transform(chunk: string): IPreProcessed; 
+	transform(chunk: string): void; // should emit IPreProcessed
 }
 
 export interface IPreProcessed {
