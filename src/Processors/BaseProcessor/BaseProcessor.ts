@@ -28,19 +28,21 @@ export class BaseProcessor implements IProcessor {
 		this.emitter = emitter;
 		//setup
 		this.connectReceiver();
+		this.connectPreProcessor();
 	}
 
 	private connectReceiver() {
 		this.emitter.on(eventNames.receiverChunk, (chunk: string) => {
-			const result = this.process(chunk);
-			this.emitter.emit(eventNames.processorResult, result);
+			this.preProcessor.transform(chunk);
 		});
 		this.emitter.on(eventNames.receiverClosed, () => {});
 	}
 
-	private process(chunk: string): IResultTemplate {
-		const preProcessed: IPreProcessed = this.preProcessor.transform(chunk);
-		const processed: IProcessed = this.strategy.execute(preProcessed);
-		return this.resultTemplate.fillWith(processed);	
+	private connectPreProcessor() {
+		this.emitter.on(eventNames.preProcessorChunk, (preProcessed: IPreProcessed) => {
+			const processed: IProcessed = this.strategy.execute(preProcessed);
+			const result: IResultTemplate = this.resultTemplate.fillWith(processed);
+			this.emitter.emit(eventNames.processorResult, result);
+		})
 	}
 }
