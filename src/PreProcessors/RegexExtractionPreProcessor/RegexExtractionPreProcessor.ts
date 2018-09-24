@@ -5,7 +5,7 @@ import { IPreProcessed } from '../PreProcessor.interface';
 import { BasePreProcessor } from '../BasePreProcessor/BasePreProcessor';
 
 export class RegexExtractionPreProcessor extends BasePreProcessor {
-	constructor(emitter: EventEmitter, private regex: RegExp) {
+	constructor(emitter: EventEmitter, protected regex: RegExp) {
 		super(emitter);
 	}
 
@@ -15,11 +15,11 @@ export class RegexExtractionPreProcessor extends BasePreProcessor {
 		})
 	}
 
-	private onExtraction(match: string): void {
+	protected onExtraction(match: string): void {
 		this.emitter.emit(BasePreProcessor.emissionEventName, this.buildPreProcessed(match));
 	}
 
-	private buildPreProcessed(match: string): IPreProcessed {
+	protected buildPreProcessed(match: string): IPreProcessed {
 		return {
 			isPreProcessed: () => true,
 			data: match,
