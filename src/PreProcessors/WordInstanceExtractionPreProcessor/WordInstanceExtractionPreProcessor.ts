@@ -6,6 +6,6 @@ import { RegexInstanceExtractionPreProcessor } from '../RegexInstanceExtractionP
 export class WordInstanceExtractionPreProcessor extends RegexInstanceExtractionPreProcessor {
 
 	constructor(emitter: EventEmitter) {
-		super(emitter, /\w+[-']?\w*/g);
+		super(emitter, /\w+'?\w*/g);
 	}
 }

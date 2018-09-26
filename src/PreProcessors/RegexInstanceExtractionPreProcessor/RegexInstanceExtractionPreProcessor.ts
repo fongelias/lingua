@@ -17,7 +17,7 @@ export class RegexInstanceExtractionPreProcessor extends RegexExtractionPreProce
 	}
 
 	protected memoizedOnExtraction(match: string): void {
-		if(this.matchMemo[match]) {
+		if(!this.matchMemo[match]) {
 			this.onExtraction(match);
 		}
 		this.matchMemo[match] = true;
