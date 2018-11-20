@@ -7,4 +7,5 @@ export interface IStrategy {
 
 export interface IProcessed {
 	isProcessed(): boolean;
+	data: any;
 }
